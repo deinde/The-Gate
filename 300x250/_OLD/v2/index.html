@@ -1,0 +1,345 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <title>ConEd 6181_Digi_General | HTML5 Banner - 300x250 </title>
+
+        <style>
+
+
+            /*Banner*/
+
+            * {                              
+                margin: 0;
+                padding: 0;
+		        box-sizing: border-box;
+            }
+
+       
+            #banner {
+                position: static;
+                margin: 0 auto;
+                width: 300px;
+                height: 250px;
+                text-align:center;
+                border: 1px solid black;
+                background-color: white;
+                box-sizing: border-box;
+                perspective: 1600px;
+            }
+ 
+            #panel {
+                position: absolute;
+                z-index: 5;
+                width: 278px;
+                border: 1px solid #46789b;
+                height: 228px;
+                -webkit-perspective: 500px;
+                perspective: 1000px;
+                top: 10px;
+                left: 10px;
+                overflow: hidden;   
+                }
+
+            div, img {
+                position: absolute;
+            }
+			
+            #main-text{
+                z-index: 0;
+                top: 72px;
+                left: 31px;
+                width: 220px;
+                height: 80px;
+                overflow: hidden;
+            } 
+		
+            #family-wrapper{
+                position: absolute;
+                display: none;
+                perspective: 1000px;
+                z-index: -1;
+                top: 9px;
+                left: 10px;
+                width: 278px; 
+                height: 230px; 
+                overflow: hidden;
+                -webkit-transform: rotate3d(1, 0, 0, -90deg);
+                -ms-transform: rotate3d(1, 0, 0, -90deg);
+                transform: rotate3d(1, 0, 0, -90deg);
+            } 
+	
+            #family {
+                position: absolute;
+                perspective: 1000px;
+                left: -49px;
+                top: -72px;
+                width: 432px;
+                height: 410px;
+                -webkit-transform: scale(.8333334) translateX(-23px) translateY(-26px);
+                -ms-transform: scale(.8333334) translateX(-23px) translateY(-26px);
+                transform: scale(.8333334) translateX(-23px) translateY(-26px);     
+           
+            } 
+	
+            #slide3-wrapper {
+                width: 277px; 
+                height: 228px;
+                perspective: 1000px;
+                border: 1px solid #46789b;
+                top: 10px;
+                left: 10px;
+                -ms-transform: rotate3d(0, 1, 0, -90deg);
+                -webkit-transform: rotate3d(0, 1, 0, -90deg);
+                transform: rotate3d(0, 1, 0, -90deg);
+            }
+    
+            #slide3 {
+                position: absolute;
+                display: none;
+                width: 260px;
+                height: 206px;
+                top: 9px;
+                left: 7px;
+            }
+    
+            #cta-wrapper {
+                position: absolute;
+                z-index: 5;
+                display: block;
+                width: 143px;
+                height: 230px;
+                perspective: 1000px;
+                top: 9px;
+                left: 15px;
+                -ms-transform: rotate3d(0, 1, 0, 90deg);
+                -webkit-transform: rotate3d(0, 1, 0, 90deg);
+                transform: rotate3d(0, 1, 0, 90deg);
+                transform-origin: 102px 50%;
+                }
+    
+            #cta {
+                position: absolute;
+                width: 143px;
+                height: 230px;
+                display: none;
+                }
+
+		
+            #footerWrapper {
+                position: absolute;
+                display: block;
+                width: 138px;
+                height: 45px;
+                top: 194px;
+                left: 15px;
+                -ms-transform-origin: 50% -31px;
+                -webkit-transform-origin: 50% -31px;
+                transform-origin: 50% -31px;
+                -webkit-transform: rotate3d(1, 0, 0, -90deg);
+                transform: rotate3d(1, 0, 0, -90deg);
+                }
+
+            #footer {
+                position: absolute;
+                z-index: 4;
+                width: 138px;
+                height: 45px;
+                display: none;
+                } 
+    
+
+            #logoWrapper {
+                position: absolute;
+                display: block;
+                left: 190px;
+                top: 72px;
+                height: 103px;
+                width: 80px;
+                }
+
+            #logo {
+                position: absolute;
+                left: 0;
+                opacity: 0;
+                height: 103px;
+                width: 80px;
+                }
+
+            #lastwrapper {
+                width: 203px;
+                height: 241px;
+                top: 0;
+                left: -5px;
+                position: absolute;
+            }
+            
+            /*For Sizmek*/
+            button {
+                height: 250px;
+                width: 300px;
+                cursor: pointer;
+                z-index: 500;
+                opacity: 0;
+            }
+        </style>
+
+    </head>
+    <body onload="initGS() ;"> 
+
+        <div id='banner'>
+            <div id='panel'>
+                <img id='main-text' src='images/main-text.jpg' style='border: none' alt='first slide' />  
+            </div> <!-- closing panel tag-->
+
+            <!--Has image of girl -->        
+            <div id='family-wrapper'>
+                <img id='family' src='images/girl.jpg' style='border: none' alt='father_and_daughter' />
+            </div> 
+
+            <div id='slide3-wrapper'>
+                <img id='slide3' src='images/second-text.jpg' style='border: none' alt='Outage electricity slide' />
+            </div>
+
+            <div id='lastwrapper'>
+                <a href='' id='cta-wrapper'>
+                    <img id='cta' src='images/cta-button.jpg' style='border: none' alt='cta button' />
+                </a>
+
+                <div id='logoWrapper'>
+                    <img id='logo' src='images/logo.jpg' style='border: none' alt='con ed logo'/>
+                </div>
+            </div>
+        </div>
+        <button id="clickthroughButton" class="button clickthrough" onclick="handleClickthroughButtonClick();"></button>
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TimelineLite.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenLite.min.js'></script>
+  	<script src='https://cdnjs.cloudflare.com/ajax/libs/sizzle/2.0.0/sizzle.min.js'></script>
+    <script type="text/javascript" src="https://secure-ds.serving-sys.com/BurstingScript/EBLoader.js"></script>
+    <script>
+	
+	function initGS(){
+    	var $ = Sizzle,
+		$panel = $('#panel'),
+		$familywrapper = $('#family-wrapper'),
+		$family = $('#family'),
+        $slide3 = $('#slide3'),
+        $slide3wrapper = $(' #slide3-wrapper'),
+        $buttonwrapper = $('#button-wrapper'),
+        $cta = $('#cta'),
+        $ctaWrapper = $('#cta-wrapper'),
+        $footerwrapper = $('#footerWrapper'),
+        $footer = $('#footer'),
+        $logo= $('#logo');    
+        
+			
+
+        
+         // Animation Begins
+
+
+        // Rotates panel backward	
+        TweenMax.to($panel, 1, {
+            rotationX: 90,
+            delay: 3,
+            ease: Power2.easeIn,
+                onComplete: function() {
+                $panel[0].style.display = 'none';
+                $familywrapper[0].style.display = 'block';
+                $familywrapper[0].style.zIndex = 3;
+            }
+        });	 
+        
+		
+	   // Rotates family wrapper and shows guy image
+        TweenMax.to($familywrapper, 1, {
+            delay: 4,
+            rotationX: 0,
+            ease: Power2.easeOut,
+            onComplete: function() {
+                $family[0].style.zIndex = 4;
+                }
+        }); 
+        
+ 
+        // Zooms in on family
+        TweenMax.to($family, 2, { 
+            delay: 4.5,
+            ease: Sine.easeOut,
+//            transform: 'scale(1) translate(-12px,-22px)'    
+             transform: 'scale(1) translate(-40px, -10px)'  
+        });
+	
+ 
+
+        // Rotates guy Image from the Y axis into slide # 3  
+        TweenMax.to($family, 1, {
+            delay: 8,
+            ease: Sine.easeIn,
+            rotationY: 90,
+            onComplete: function(){
+                $slide3[0].style.display = 'block';
+                $family[0].style.display = 'none';
+            }
+        });
+      
+        // Slide 3 appears   
+        TweenMax.to($slide3wrapper, 1, {
+            delay: 9, 
+            ease: Sine.easeOut,
+            rotationY: 0
+        });
+
+
+        // Slide 3 rotates again to show cta
+        TweenMax.to($slide3wrapper, 1, {
+            delay: 15.5,
+            ease: Linear.easeNone,
+            rotationY: -90,
+            onComplete: function(){
+                $slide3wrapper[0].style.display = 'none';
+                $cta[0].style.display = 'block';
+                $familywrapper[0].style.display = 'none';
+            }
+        });
+        
+        // Rotates in cta button
+        TweenMax.to($ctaWrapper, 0.8, {
+            delay: 16.5,    
+            ease: Linear.easeIn,
+            rotationY: 0
+        });
+
+
+        TweenMax.to($logo, 0.8, {
+            delay: 17,
+            ease: Linear.easeNone,
+            opacity: 1
+        }); 
+
+
+    } // closing function initGS() tag
+ 
+            // Start of Sizmek
+        function initEB(){
+            if (!EB.isInitialized()) {
+                EB.addEventListener(EBG.EventName.EB_INITIALIZED, startAd);
+            }
+            else {
+                startAd();
+            }
+        }
+                
+            function handleClickthroughButtonClick() {
+                EB.clickthrough();
+            }
+        EBbutton = document.getElementById("clickthroughButton");   
+
+
+    </script>
+
+    </body>
+</html>

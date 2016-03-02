@@ -1,0 +1,355 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <title>ConEd 6181_Digi_General | HTML5 Banner - 160x600 </title>
+
+        <style>
+
+
+            /*Banner*/
+
+            * {
+                margin: 0;
+                padding: 0;
+		        box-sizing: border-box;
+            }
+
+            #banner {
+                position: static;
+                margin: 0 auto;
+                width: 160px;
+                height: 600px;
+                text-align:center;
+                border: 1px solid black;
+                background-color: white;
+                box-sizing: border-box;
+                perspective: 1600px;
+            }
+ 
+            #panel {
+                position: absolute;
+                z-index: 5;
+                width: 136px;
+                border: 1px solid #46789b;
+                height: 578px;
+                -webkit-perspective: 500px;
+                perspective: 1000px;
+                top: 10px;
+                left: 10px;
+                overflow: hidden;
+                }
+
+            div, img {
+                position: absolute;
+            }
+			
+            #main-text{
+                z-index: 0;
+                top: 225px;
+                left: 7px;
+                width: 120px;
+                height: 131px;
+                overflow: hidden;
+            } 
+		
+            #family-wrapper{
+                position: absolute;
+                display: none;
+                perspective: 1000px;
+                z-index: -1;
+                top: 10px;
+                left: 10px;
+                width: 138px; 
+                height: 578px;
+                overflow: hidden;
+                -webkit-transform: rotate3d(0, 1, 0, -90deg);
+                -ms-transform: rotate3d(0, 1, 0, -90deg);
+                transform: rotate3d(0, 1, 0, -90deg);
+            } 
+	
+            #family {
+                position: absolute;
+                perspective: 1000px;
+                top: -20px;
+                height: 600px;
+                width: 407px;
+                left: -100px;
+            } 
+	
+	
+            #slide3-wrapper {
+                width: 138px; 
+                height: 578px;
+                perspective: 1000px;
+                border: 1px solid #46789b;
+                top: 10px;
+                left: 10px;
+                -ms-transform: rotate3d(1, 0, 0, -90deg);
+                -webkit-transform: rotate3d(1, 0, 0, -90deg);
+                 transform: rotate3d(1, 0, 0, -90deg);
+            }
+    
+            #slide3 {
+                top: 43px;
+                left: 8px;
+                width: 120px;
+                height: 489px;
+                position: absolute;
+                display: none;
+            }
+    
+            #cta-wrapper {
+                position: absolute;
+                z-index: 5;
+                width: 140px;
+                height: 318px;
+                perspective: 1000px;
+                top: 271px;
+                left: 9px;
+                -ms-transform: rotate3d(1, 0, 0, 90deg);
+                -webkit-transform: rotate3d(1, 0, 0, 90deg);
+                transform: rotate3d(1, 0, 0, 90deg);
+                transform-origin: 50% -10px;
+                display: none;
+                }
+    
+            #cta {
+                position: absolute;
+                width: 140px;
+                height: 318px;
+                top: 0;
+                left: 0;
+            }
+		
+            #footerWrapper {
+                position: absolute;
+                display: block;
+                width: 130px;
+                height: 48px;
+                top: 518px;
+                left: 18px;
+                -ms-transform-origin: 50% -31px;
+                -webkit-transform-origin: 50% -31px;
+                transform-origin: 50% -31px;
+                -webkit-transform: rotate3d(1, 0, 0, -90deg);
+                transform: rotate3d(1, 0, 0, -90deg);
+                }
+
+            #footer {
+                position: absolute;
+                z-index: 4;
+                width: 130px;
+                height: 68px;
+                display: none;
+                } 
+    
+
+            #logoWrapper {
+                position: absolute;
+                display: block;
+                left: 23px;
+                top: 65px;
+                width: 110px;
+                height: 140px;
+                }
+
+            #logo {
+                position: absolute;
+                left: 0;
+                opacity: 0;
+                width: 110px;
+                height: 140px;
+                }
+
+            #lastwrapper {
+                width: 158px;
+                height: 241px;
+                top: 0;
+                left: 0;
+                position: absolute;
+            }
+            
+            /*For Sizmek*/
+            
+              button {
+                top: 0;
+                left: 0;
+                position: absolute;
+                height: 600px;
+                width: 160px;
+                cursor: pointer;
+                z-index: 500;
+                opacity: 0;
+            }
+            
+        </style>
+
+    </head>
+    <body onload="initGS() ;"> 
+
+        <div id='banner'>
+            <div id='panel'>
+                <img id='main-text' src='images/main-text.jpg' style='border: none' alt='first slide' />  
+            </div> <!-- closing panel tag-->
+
+            <!--Has image of girl -->        
+            <div id='family-wrapper'>
+                <img id='family' src='images/girl.jpg' style='border: none' alt='guy' />
+            </div> 
+
+            <div id='slide3-wrapper'>
+                <img id='slide3' src='images/second-text.jpg' style='border: none' alt='slide 3' />
+            </div>
+
+            <div id='lastwrapper'>
+                <a href='' id='cta-wrapper'>
+                    <img id='cta' src='images/cta-button.jpg' style='border: none' alt='cta button' />
+                </a>
+
+
+                <div id='logoWrapper'>
+                    <img id='logo' src='images/logo.jpg' style='border: none' alt='con ed logo'/>
+                </div>
+            </div>
+            <button id="clickthroughButton" class="button clickthrough" onclick="handleClickthroughButtonClick();"></button>
+        </div>
+      
+        
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TimelineLite.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenLite.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/sizzle/2.0.0/sizzle.min.js'></script>
+        <script type="text/javascript" src="https://secure-ds.serving-sys.com/BurstingScript/EBLoader.js"></script>
+        <script>
+	
+        function initGS(){
+            var $ = Sizzle,
+            $panel = $('#panel'),
+            $familywrapper = $('#family-wrapper'),
+            $family = $('#family'),
+            $slide3 = $('#slide3'),
+            $slide3wrapper = $(' #slide3-wrapper'),
+            $ctawrapper = $('#cta-wrapper'),
+            $button = $('#button'),
+            $footerwrapper = $('#footerWrapper'),
+            $footer = $('#footer'),
+            $logo = $('#logo');    
+
+
+
+        // Rotates panel backward	
+
+        TweenMax.to($panel, 1, {
+            rotationY: 90,
+            delay: 2,
+            ease: Power2.easeIn,
+                onComplete: function() {
+                $panel[0].style.display = 'none';
+                $familywrapper[0].style.display = 'block';
+                $familywrapper[0].style.zIndex = 3;
+            }
+        });	 
+
+        
+        // Rotates family wrapper and shows family image
+        TweenMax.to($familywrapper, 1, {
+            delay: 3,
+            rotationY: 0,
+            ease: Power2.easeOut,
+            onComplete: function() {
+                $family[0].style.zIndex = 4;
+                }
+        }); 
+
+            
+ 
+        // Pans righton on family image
+        
+        TweenMax.to($family, 2, { 
+            delay: 3.5,
+            ease: Sine.easeOut,
+            transform: 'translateX(-150px)'
+//           transform: 'scale(1) translate(0,40px)'    
+         });
+
+    
+        // Rotates Family Image from the Y axis into slide # 3  
+        TweenMax.to($family, 1, {
+            delay: 6.5,
+            ease: Power2.easeIn,
+            rotationX: 90,
+            onComplete: function(){
+                $slide3[0].style.display = 'block';
+                $family[0].style.display = 'none';
+            }
+        });
+
+
+        // Slide 3 appears   
+        TweenMax.to($slide3wrapper, 1, {
+            delay: 7.5, 
+            ease: Power2.easeOut,
+            rotationX: 0
+        });
+            
+ 
+        // Slide 3 rotates again to show cta
+        TweenMax.to($slide3wrapper, 1, {
+            delay: 13.5,
+            ease: Power2.easeIn,
+            rotationX: -90,
+            onComplete: function(){
+                $slide3wrapper[0].style.display = 'none';
+                $ctawrapper[0].style.display = 'block';
+                $familywrapper[0].style.display = 'none';
+            }
+        });
+            
+
+        // Rotates in cta button
+        TweenMax.to($ctawrapper, .8, {
+            delay: 14.5,    
+            ease: Linear.easeOut,
+            rotationX: 0,
+//            onComplete: function(){
+//                $footer[0].style.display = 'block';
+//            }
+        });
+
+
+     
+
+        TweenMax.to($logo, .8, {
+            delay: 15.5,
+            ease: Power2.easeOut,
+            opacity: 1
+        }); 
+
+
+    } // closing function initGS() tag
+			
+        // Start of Sizmek
+        function initEB(){
+            if (!EB.isInitialized()) {
+                EB.addEventListener(EBG.EventName.EB_INITIALIZED, startAd);
+            }
+            else {
+                startAd();
+            }
+        }
+                
+            function handleClickthroughButtonClick() {
+                EB.clickthrough();
+            }
+        EBbutton = document.getElementById("clickthroughButton");   
+        
+        
+        
+    
+
+
+    </script>
+
+    </body>
+</html>

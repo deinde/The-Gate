@@ -1,0 +1,361 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <title>ConEd 6181_Digi_GENERAL | HTML5 Banner - 728x90 </title>
+
+        <style>
+
+
+            /*Banner*/
+
+            * {                              
+                margin: 0;
+                padding: 0;
+		        box-sizing: border-box;
+            }
+
+            #banner {
+                position: static;
+                margin: 0 auto;
+                width: 728px;
+                height: 90px;
+                text-align:center;
+                border: 1px solid black;
+                background-color: white;
+                box-sizing: border-box;
+                perspective: 1600px;
+            }
+ 
+            #panel {
+                position: absolute;
+                z-index: 5;
+                width: 706px;
+                border: 1px solid #46789b;
+                height: 68px;
+                -webkit-perspective: 500px;
+                perspective: 1000px;
+                top: 10px;
+                left: 10px;
+                overflow: hidden;   
+                }
+
+            div, img {
+                position: absolute;
+            }
+			
+            #main-text{
+                z-index: 0;
+                top: 20px;
+                left: 166px;
+                width: 377px;
+                height: 25px;
+                overflow: hidden;
+            } 
+		
+            #family-wrapper{
+                position: absolute;
+                -webkit-perspective: 3000px;
+                perspective: 3000px;
+                z-index: -1;
+                top: 9px;
+                left: 8px;
+                width: 710px; 
+                height: 70px; 
+                overflow: hidden;
+                -webkit-transform: rotate3d(1, 0, 0, -90deg);
+                -ms-transform: rotate3d(1, 0, 0, -90deg);
+                transform: rotate3d(1, 0, 0, -90deg);
+            } 
+	
+            #family {
+                position: absolute;
+                perspective: 3000px;
+                left: 0;
+                top: -303px;
+                width: 728px;
+                height: 487px;
+                -webkit-transform:translateX(0);
+                -ms-transform:translateX(0) ;
+                transform:translateX(0) ;
+            } 
+	
+	
+            #slide3-wrapper {
+                display: none;
+                width: 705px; 
+                height: 70px;
+                perspective: 1000px;
+                border: 1px solid #46789b;
+                top: 9px;
+                left: 10px;
+                -ms-transform: rotate3d(0, 1, 0, -90deg);
+                -webkit-transform: rotate3d(0, 1, 0, -90deg);
+                transform: rotate3d(0, 1, 0, -90deg);
+              
+            }
+    
+            #slide3 {
+                position: absolute;
+                top: 6px;
+                left: 26px;
+                width: 650px;
+                height: 55px;
+            }
+            
+            #tower {
+                top: 10px;
+                left: 53px;
+                width: 47px;
+                height: 50px;
+            }
+    
+            #button-wrapper {
+                position: absolute;
+                z-index: 5;
+                display: block;
+                width: 369px;
+                height: 70px;
+                perspective: 1500px;
+                top: 9px;
+                left: 14px;
+                -ms-transform: rotate3d(0, 1, 0, 90deg);
+                -webkit-transform: rotate3d(0, 1, 0, 90deg);
+                transform: rotate3d(0, 1, 0, 90deg);
+/*                transform-origin: 102px 50%;  */
+                transform-origin: 260px 50%;
+                }
+    
+            #button {
+                position: absolute;
+                width: 369px;
+                height: 70px;
+                display: none;
+                }
+
+		
+            #footerWrapper {
+                position: absolute;
+                display: block;
+                width: 55px;
+                height: 70px;
+                top: 9px;
+                left: 15px;
+                transform-origin: 85px 50%;
+                -ms-transform: rotate3d(0, 1, 0, -90deg);
+                -webkit-transform: rotate3d(0, 1, 0, -90deg);
+                transform: rotate3d(0, 1, 0, -90deg);
+                }
+
+            #footer {
+                position: absolute;
+                z-index: 4;
+                width: 55px;
+                height: 70px;
+                display: none;
+                } 
+    
+
+            #ctaWrapper {
+                position: absolute;
+                display: block;
+                left: 426px;
+                top: 24px;
+                width: 260px;
+                height: 40px;
+                }
+
+            #cta {
+                position: absolute;
+                left: 0;
+                opacity: 0;
+                width: 260px;
+                height: 40px;
+                }
+
+            #lastwrapper {
+                width: 732px;
+                height: 84px;
+                top: 0;
+                left: -5px;
+                position: absolute;
+            }
+            
+            button {
+                top: 0;
+                left: 0;
+                position: absolute;
+                width: 728px;
+                height: 90px;
+                opacity: 0;
+                z-index: 500;
+                cursor: pointer;
+            }
+            
+        </style>
+
+    </head>
+    <body onload="initGS() ;"> 
+
+        <div id='banner'>
+            <div id='panel'>
+                <img id='main-text' src='images/main-text.jpg' style='border: none' alt='first slide' />  
+            </div> <!-- closing panel tag-->
+
+            <!--Has image of girl -->        
+            <div id='family-wrapper'>
+                <img id='family' src='images/girl.jpg' style='border: none' alt='father_and_daughter' />
+            </div> 
+
+            <div id='slide3-wrapper'>
+                 <img id='slide3' src='images/second-text.jpg' alt='Outage electricity slide' />
+            </div>
+
+            <div id='lastwrapper'>
+                <a href='' id='button-wrapper'>
+                    <img id='button' src='images/cta-button.jpg' style='border: none' alt='cta button' />
+                </a>
+              
+
+                <div id='ctaWrapper'>
+                    <img id='cta' src='images/logo.png' style='border: none' alt='con ed logo'/>
+                </div>
+            </div>
+            <button id="clickthroughButton" class="button clickthrough" onclick="handleClickthroughButtonClick();"></button>
+        </div>
+
+       
+
+
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TimelineLite.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenLite.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/sizzle/2.0.0/sizzle.min.js'></script>
+        <script type="text/javascript" src="https://secure-ds.serving-sys.com/BurstingScript/EBLoader.js"></script>
+        <script>
+	
+        function initGS(){
+            var $ = Sizzle,
+                $panel = $('#panel'),
+                $familywrapper = $('#family-wrapper'),
+                $family = $('#family'),
+                $slide3 = $('#slide3'),
+                $slide3wrapper = $(' #slide3-wrapper'),
+                $buttonwrapper = $('#button-wrapper'),
+                $button = $('#button'),
+                $footerwrapper = $('#footerWrapper'),
+                $footer = $('#footer'),
+                $space = $('#space'),
+                $cta = $('#cta');    
+        
+			
+
+        
+            // Animation Begins
+
+
+            //     Rotates panel backward	
+            TweenMax.to($panel, .5, {
+                rotationX: 90,
+                delay: 3,
+                ease: Power2.easeIn,
+                onComplete: function() {
+                    $panel[0].style.display = 'none';
+                    $familywrapper[0].style.display = 'block';
+                    $familywrapper[0].style.zIndex = 3;
+            }
+        });	 
+		
+            // Rotates family wrapper and shows family image
+            TweenMax.to($familywrapper, .5, {
+                delay: 3.5,
+                rotationX: 0,
+                ease: Power2.easeIn,
+                onComplete: function() {
+                    $family[0].style.zIndex = 4;
+                }
+            }); 
+
+   
+
+            // Pans down on guy image
+            TweenMax.to($family, 3, { 
+                delay: 4,
+                ease: Sine.easeOut,  
+                transform: 'translateY(115px)'  
+             });
+	
+ 
+
+            // Rotates guy Image from the Y axis into slide # 3  
+            TweenMax.to($family, .5, {
+                delay: 8,
+                ease: Linear.easeIn,
+                rotationY: 90,
+                onComplete: function(){
+                    $slide3wrapper[0].style.display = 'block';
+                    $family[0].style.display = 'none';
+                }
+            });
+    
+      
+      
+            // Slide 3 appears   
+            TweenMax.to($slide3wrapper, .5, {
+                delay: 8.5, 
+                ease: Linear.easeNone,
+                rotationY: 0
+            });
+
+
+            // Slide 3 rotates again to show cta
+            TweenMax.to($slide3wrapper, .5, {
+                delay: 15.5,
+                ease: Linear.easeNone,
+                rotationY: -90,
+                onComplete: function(){
+                    $slide3wrapper[0].style.display = 'none';
+                    $button[0].style.display = 'block';
+                    $familywrapper[0].style.display = 'none';
+                }
+            });
+       
+            // Rotates in cta button
+            TweenMax.to($buttonwrapper, .5, {
+                delay: 16,    
+                ease: Linear.easeIn,
+                rotationY: 0
+            });
+
+          
+
+            TweenMax.to($cta, .5, {
+                delay: 17,
+                ease: Linear.easeNone,
+                opacity: 1
+            }); 
+
+
+        } // closing function initGS() tag
+    
+        // Start of Sizmek
+        function initEB(){
+            if (!EB.isInitialized()) {
+                EB.addEventListener(EBG.EventName.EB_INITIALIZED, startAd);
+            }
+            else {
+                startAd();
+            }
+        }
+
+            function handleClickthroughButtonClick() {
+                EB.clickthrough();
+            }
+        EBbutton = document.getElementById("clickthroughButton"); 
+
+
+    </script>
+
+    </body>
+</html>
